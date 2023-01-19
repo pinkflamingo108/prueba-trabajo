@@ -1,12 +1,12 @@
 import React from "react";
-import Barra from "./Barra";
-import DisplayInfo from "./DisplayInfo";
+// import Barra from "./Barra";
+// import DisplayInfo from "./DisplayInfo";
+import MainPage from "./pages/MainPage";
 
 const App = (props) => {
   return (
     <div>
-      <Barra />
-      <DisplayInfo />
+      <MainPage />
     </div>
   );
 };

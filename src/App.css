@@ -12,3 +12,21 @@
 .no-display {
   display: none;
 }
+
+.background-form {
+  background-color: #018193;
+  opacity: 0.5;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.height-padding {
+  padding: 5px;
+}
+
+.width {
+  width: 100%;
+}

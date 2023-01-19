@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import { faXmark, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import DisplayInfo from "../DisplayInfo";
 
-const Barra = () => {
+const MainPage = () => {
   const [view, setView] = useState(false);
   const [formData, setFormData] = useState({
+    name: "",
+    price: "",
+    quantity: "",
+    sku: "",
+  });
+
+  const [finalData, setFinalData] = useState({
     name: "",
     price: "",
     quantity: "",
@@ -114,7 +122,18 @@ const Barra = () => {
             <div className="flex justify-center">
               <button
                 onClick={(e) => {
-                  console.log(formData);
+                  finalData.name = formData.name;
+                  finalData.price = formData.price;
+                  finalData.quantity = formData.quantity;
+                  finalData.sku = formData.sku;
+                  console.log(finalData);
+
+                  setFormData({
+                    name: "",
+                    price: "",
+                    quantity: "",
+                    sku: "",
+                  });
                 }}
                 className="bg-blue-500 text-white w-1/2 h-12 rounded-md hover:bg-blue-400"
               >
@@ -124,8 +143,9 @@ const Barra = () => {
           </div>
         </div>
       </div>
+      <DisplayInfo formState={finalData} />
     </div>
   );
 };
 
-export default Barra;
+export default MainPage;
