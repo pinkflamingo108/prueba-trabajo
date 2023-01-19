@@ -33,6 +33,24 @@ function DisplayInfo({ formState }) {
     });
   }, [data]);
 
+  useEffect(() => {
+    if (formState.name.length) {
+      // console.log([formState]);
+      setData([
+        ...data,
+        {
+          name: formState.name,
+          price: formState.price,
+          quantity: formState.quantity,
+          sku: formState.sku,
+          status: formState.status,
+        },
+      ]);
+
+      console.log("worked");
+    }
+  }, [formState.status]);
+
   return (
     <div className="mt-6">
       <div>
@@ -80,10 +98,10 @@ function DisplayInfo({ formState }) {
                     <div
                       className={res.activeStatus ? "display" : "no-display"}
                     >
-                      <div>Name Two: {res.items[0].name}</div>
+                      {/* <div>Name Two: {res.items[0].name}</div>
                       <div>Price: {res.items[0].price}$</div>
                       <div>Quantity: {res.items[0].fulfillment.quantity}</div>
-                      <div>Sku: {res.items[0].sku}</div>
+                      <div>Sku: {res.items[0].sku}</div> */}
                     </div>
                   </div>
                 </div>

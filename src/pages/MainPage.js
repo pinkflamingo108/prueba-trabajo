@@ -17,6 +17,7 @@ const MainPage = () => {
     price: "",
     quantity: "",
     sku: "",
+    status: false,
   });
 
   return (
@@ -126,7 +127,7 @@ const MainPage = () => {
                   finalData.price = formData.price;
                   finalData.quantity = formData.quantity;
                   finalData.sku = formData.sku;
-                  console.log(finalData);
+                  finalData.status = !finalData.status;
 
                   setFormData({
                     name: "",
